@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cicahda — The Freshtro</title>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="#home">
+        <span class="brand-logo">Cicahda</span>
+        <small class="tagline">The Freshtro</small>
+      </a>
+
+      <div class="nav-actions">
+        <input id="menuSearch" class="search" type="search" placeholder="Search sandwiches..." aria-label="Search menu">
+        <button id="cartBtn" class="btn cart-btn" aria-label="Open cart">
+          Cart <span id="cartCount" class="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Cicahda</h1>
+          <p class="hero-sub">Handcrafted sandwiches · cozy vibes · fresh ingredients</p>
+          <div class="hero-cta">
+            <a href="#menu" class="btn">See Menu</a>
+            <a href="#contact" class="btn btn-ghost">Contact & Visit</a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <!-- Optional: place your uploaded menu image at assets/menu.jpg -->
+          <div class="menu-preview">
+            <img src="assets/menu.jpg" alt="Cicahda menu preview (optional)"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Philosophy -->
+    <section class="about container">
+      <div class="about-grid">
+        <div>
+          <h2>Our Philosophy</h2>
+          <p>We believe in simple, wholesome food with bold flavors. From bagels to focaccia — every sandwich is crafted with love and seasonal ingredients.</p>
+        </div>
+        <div class="about-stats">
+          <div><strong>Fresh</strong><span> daily</span></div>
+          <div><strong>Vegetarian-forward</strong><span> options</span></div>
+          <div><strong>Comfort</strong><span> served warm</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="menu container">
+      <div class="section-header">
+        <h2>SANDWICHES</h2>
+        <p class="muted">Made to order — choose your bread: bagel, croissant or focaccia where available.</p>
+      </div>
+
+      <div class="menu-controls">
+        <select id="sortSelect" class="select">
+          <option value="default">Sort: Recommended</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+        </select>
+      </div>
+
+      <ul id="menuList" class="menu-list" aria-live="polite">
+        <!-- JS will populate this list from the data -->
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact container">
+      <div class="contact-card">
+        <div>
+          <h3>Visit Us</h3>
+          <p>123 Freshtro Lane<br>Open: 8:00 AM — 7:30 PM</p>
+          <p><strong>Phone:</strong> +91 98765 43210</p>
+        </div>
+        <form id="contactForm" class="contact-form" onsubmit="return false;">
+          <h4>Send a quick message</h4>
+          <input type="text" id="name" placeholder="Your name" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <textarea id="message" placeholder="Message" rows="3"></textarea>
+          <button class="btn" id="sendMsg">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="cart-modal" aria-hidden="true">
+    <div class="cart-panel">
+      <button id="closeCart" class="close">&times;</button>
+      <h3>Your Order</h3>
+      <ul id="cartItems" class="cart-items"></ul>
+      <div class="cart-foot">
+        <div class="total"><span>Total</span> <strong id="cartTotal">₹0.00</strong></div>
+        <div class="cart-actions">
+          <button id="clearCart" class="btn btn-ghost">Clear</button>
+          <button id="checkout" class="btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Cicahda</strong>
+        <p class="muted">The Freshtro — handcrafted sandwiches with heart.</p>
+      </div>
+      <div>
+        <p>© <span id="year"></span> Cicahda — All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
